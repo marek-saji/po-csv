@@ -2,6 +2,9 @@
   "name": "po-csv",
   "version": "1.0.0",
   "description": "Convert GNU gettext PO files from CSV files and merge them back in.",
+  "bin": {
+    "pocsv": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +16,10 @@
     "i18n"
   ],
   "author": "Marek ‘saji’ Augustynowicz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^0.5.5",
+    "pofile": "^0.2.12",
+    "promise": "^6.1.0"
+  }
 }

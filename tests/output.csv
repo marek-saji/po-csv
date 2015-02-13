@@ -1,0 +1,6 @@
+msgid,msgid_plural,flags,references,extractedComments,comments,msgstr[0],msgstr[1],msgstr[2],msgstr[3]
+Deleted (%sUndo%s),,php-format,,"Dear Translator,
+%sUndo%s becomes a link to undo the action",,Deleted (%sUndo%s),,,
+"Hello, %s",,php-format,,,,"Witaj, %s",,,
+You have one new notification,You have %d new notifications,php-format,,,,Masz jedno nowe powiadomienie,Masz %d nowych powiadomienia,Masz %d nowych powiadomień,Masz %d nowego powiadomienia
+Sucess!,,,,,,Success!,,,

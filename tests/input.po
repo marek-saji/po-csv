@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: po-csv\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate;translatePlural:1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=4; plural=( n%1!=0 ? 3 : (n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2));\n"
+
+#. Dear Translator,
+#. %sUndo%s becomes a link to undo the action
+#, php-format
+msgid "Deleted (%sUndo%s)"
+msgstr "Deleted (%sUndo%s)"
+
+#, php-format
+msgid "Hello, %s"
+msgstr "Witaj, %s"
+
+#, php-format
+msgid "You have one new notification"
+msgid_plural "You have %d new notifications"
+msgstr[0] "Masz jedno nowe powiadomienie"
+msgstr[1] "Masz %d nowych powiadomienia"
+msgstr[2] "Masz %d nowych powiadomień"
+msgstr[3] "Masz %d nowego powiadomienia"
+
+msgid "Sucess!"
+msgstr "Success!"
