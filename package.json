@@ -1,0 +1,17 @@
+{
+  "name": "po-csv",
+  "version": "1.0.0",
+  "description": "Convert GNU gettext PO files from CSV files and merge them back in.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gettext",
+    "po",
+    "csv",
+    "translation",
+    "i18n"
+  ],
+  "author": "Marek ‘saji’ Augustynowicz",
+  "license": "ISC"
+}
