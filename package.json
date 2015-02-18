@@ -6,7 +6,9 @@
     "pocsv": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run-script test-po-csv && npm run-script test-csv-po",
+    "test-po-csv": "./index.js tests/input.po | diff - tests/output.csv",
+    "test-csv-po": "./index.js tests/input.po tests/translated.csv | diff - tests/translated.po"
   },
   "keywords": [
     "gettext",
