@@ -18,7 +18,7 @@
     "i18n"
   ],
   "author": "Marek ‘saji’ Augustynowicz",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "fast-csv": "^0.5.5",
     "pofile": "^0.2.12",
