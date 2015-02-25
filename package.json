@@ -17,6 +17,11 @@
     "translation",
     "i18n"
   ],
+  "homepage": "https://github.com/marek-saji/po-csv",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/marek-saji/po-csv.git"
+  },
   "author": "Marek ‘saji’ Augustynowicz",
   "license": "MIT",
   "dependencies": {
