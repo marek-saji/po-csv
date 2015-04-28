@@ -14,16 +14,9 @@ function throwUp (e)
     console.error(e.stack);
 }
 
-function not (fn)
-{
-    return function () {
-        return ! fn.apply(this, arguments);
-    };
-}
-
 function loadPoFile (poFilePath)
 {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function (resolve) {
         PO.load(poFilePath, function (error, poData) {
             if (error)
             {
@@ -41,7 +34,7 @@ function loadPoFile (poFilePath)
 function loadCsvFile (csvFilePath)
 {
     var csvData = [];
-    return new Promise(function (resolve, reject) {
+    return new Promise(function (resolve) {
         csv.fromPath(
             csvFilePath,
             {
@@ -158,11 +151,11 @@ function mergeIntoPo (datas)
             var targetItem = targetItemsByMsgId[item.msgid];
             if (! targetItem)
             {
-                throw Error('Item “' + item.msgid + '” does not exist in target PO file.');
+                throw Error('Item "' + item.msgid + '" does not exist in target PO file.');
             }
             if (targetItem.msgid_plural !== item.msgid_plural)
             {
-                throw Error('msgid_plural mismatch for “' + msgid + '”');
+                throw Error('msgid_plural mismatch for "' + item.msgid + '"');
             }
             targetItem.msgstr = item.msgstr;
             targetItem.flags  = item.flags;
