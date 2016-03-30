@@ -1,0 +1,4 @@
+msgid,msgid_plural,flags,references,extractedComments,comments,msgstr[0],msgstr[1]
+Exit,,,../CardFormat.qml:101,,,Zurück,
+Format,,,../CardFormat.qml:111,,,Formatieren,
+Formatting,,,../CardFormat.qml:217,,,Formatiert,

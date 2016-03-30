@@ -1,0 +1,14 @@
+#: ../CardFormat.qml:101
+msgctxt "CardFormat|"
+msgid "Exit"
+msgstr ""
+
+#: ../CardFormat.qml:111
+msgctxt "CardFormat|"
+msgid "Format"
+msgstr ""
+
+#: ../CardFormat.qml:217
+msgctxt "CardFormat|"
+msgid "Formatting"
+msgstr ""
