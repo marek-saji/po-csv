@@ -25,8 +25,8 @@
   "author": "Marek ‘saji’ Augustynowicz",
   "license": "MIT",
   "dependencies": {
-    "fast-csv": "^0.5.6",
-    "pofile": "^0.2.12",
+    "fast-csv": "^1.0.0",
+    "pofile": "^1.0.2",
     "promise": "^7.0.0"
   }
 }
