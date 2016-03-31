@@ -31,7 +31,7 @@ columns starting with “msgstr”. When you get your CSV beautifully
 translated do:
 
     node index.js file.po translated.csv > translated.po
-    cp translators.po file.po
+    cp translated.po file.po
 
 
 ______
