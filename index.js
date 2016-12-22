@@ -22,10 +22,21 @@ function loadPoFile (poFilePath)
             {
                 throw error;
             }
-            poData.nplurals = (
-                    ( poData.headers['Plural-Forms'] || '' )
-                    .match(/nplurals\s*=\s*([0-9])/) || [,1]
-                )[1];
+            if (poData.headers['Plural-Forms'])
+            {
+                poData.nplurals = (
+                        ( poData.headers['Plural-Forms'] || '' )
+                        .match(/nplurals\s*=\s*([0-9])/) || [,1]
+                    )[1];
+            }
+            else
+            {
+                poData.nplurals = Math.max.apply(undefined,
+                    poData.items.map(function (item) {
+                        return item.msgstr.length;
+                    })
+                );
+            }
             resolve(poData);
         });
     });
