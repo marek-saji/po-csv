@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('array.prototype.fill');
+
 var PO = require('pofile');
 var csv = require('fast-csv');
 var fs = require('fs');
