@@ -104,8 +104,7 @@ function transformPoItemToCsvRow (nplurals, item)
             ].concat(
                 // Rest of the columns are msgstr[idx]
                 item.msgstr
-                // Fill up with '' to nplurals length
-                .concat(new Array (nplurals - item.msgstr.length).join('.').split('.'))
+                .concat(new Array(nplurals - item.msgstr.length).fill(''))
                 .map(function (str, idx) {
                     return ['msgstr[' + idx + ']', str];
                 })
