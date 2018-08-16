@@ -17,18 +17,20 @@ then
     WIN="\033[32m${WIN}\033[m"
 fi
 
+DIFF="$( which colordiff || echo diff )"
+
 ALL_ERRORS=
 for TEST_PATH in tests/*
 do
     printf "%s " "${TEST_PATH}"
 
     ERROR=
-    if ! ./index.js "${TEST_PATH}"/input.po | diff - "${TEST_PATH}"/output.csv
+    if ! ./index.js "${TEST_PATH}"/input.po | "${DIFF}" - "${TEST_PATH}"/output.csv
     then
         ERROR=1
         printf "${FAIL}"
     fi
-    if !  ./index.js "${TEST_PATH}"/input.po "${TEST_PATH}"/input.csv | diff - "${TEST_PATH}"/output.po
+    if !  ./index.js "${TEST_PATH}"/input.po "${TEST_PATH}"/input.csv | "${DIFF}" - "${TEST_PATH}"/output.po
     then
         ERROR=1
         printf "${FAIL}"
