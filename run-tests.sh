@@ -27,25 +27,27 @@ do
     ERROR=
     if ! ./index.js "${TEST_PATH}"/input.po | "${DIFF}" - "${TEST_PATH}"/output.csv
     then
-        ERROR=1
+        ERROR="${ERROR}- ./index.js ${TEST_PATH}/input.po\n"
         printf "${FAIL}"
     fi
     if !  ./index.js "${TEST_PATH}"/input.po "${TEST_PATH}"/input.csv | "${DIFF}" - "${TEST_PATH}"/output.po
     then
-        ERROR=1
+        ERROR="${ERROR}- ./index.js ${TEST_PATH}/input.po ${TEST_PATH}/input.csv\n"
         printf "${FAIL}"
     fi
     if [ -z "${ERROR}" ]
     then
         printf "${WIN}"
+    else
+        ALL_ERRORS="${ALL_ERRORS}${ERROR}"
     fi
 
     echo
-
-    ALL_ERRORS="${ALL_ERRORS}${ERROR}"
 done
 
 if [ -n "${ALL_ERRORS}" ]
 then
+    FAILED_COUNT="$( printf -- "${ALL_ERRORS}" | wc -l )"
+    printf "\nFailed %d tests:\n${ALL_ERRORS}" "${FAILED_COUNT}"
     exit 1
 fi
