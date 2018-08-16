@@ -1,6 +1,8 @@
 #!/bin/sh
+# shellcheck disable=SC2059
+set -e
 
-if locale | grep LC_CTYPE | grep -Eqi utf.?8
+if locale | grep LC_CTYPE | grep -Eqi 'utf.?8'
 then
     FAIL=✗
     WIN=✓
@@ -18,7 +20,7 @@ fi
 ALL_ERRORS=
 for TEST_PATH in tests/*
 do
-    printf "${TEST_PATH} "
+    printf "%s " "${TEST_PATH}"
 
     ERROR=
     if ! ./index.js "${TEST_PATH}"/input.po | diff - "${TEST_PATH}"/output.csv
