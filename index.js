@@ -123,10 +123,18 @@ function transformCsvRowToPoItem (row)
     item.msgid             = row.msgid             || item.msgid;
     item.msgid_plural      = row.msgid_plural      || item.msgid_plural;
     item.references        = row.references.split('\n')        || item.references;
-    item.extractedComments = row.extractedComments.split('\n') || item.extractedComments;
-    row.flags.split('\n').forEach(function (flag) {
-        item.flags[flag] = true;
-    });
+
+    if (row.extractedComments)
+    {
+      item.extractedComments = row.extractedComments.split('\n') || item.extractedComments;
+    }
+
+    if (row.flags)
+    {
+      row.flags.split('\n').forEach(function (flag) {
+          item.flags[flag] = true;
+      });
+    }
 
     for (i = 0 ; 'msgstr[' + i + ']' in row ; i += 1)
     {
