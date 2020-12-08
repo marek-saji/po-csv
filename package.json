@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "array.prototype.fill": "^1.0.2",
-    "fast-csv": "^2.4.1",
+    "fast-csv": "^4.3.6",
     "pofile": "^1.0.11",
     "promise": "^8.0.1"
   }
