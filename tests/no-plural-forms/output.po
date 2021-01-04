@@ -11,11 +11,9 @@ msgstr ""
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 
-#, 
 msgid "apple"
 msgstr "jabłko"
 
-#, 
 msgid "an apple"
 msgid_plural "%s apples"
 msgstr[0] "jedno jabłko"

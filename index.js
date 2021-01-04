@@ -17,6 +17,13 @@ function throwUp (e)
     console.error(e.stack);
 }
 
+function splitIntoLines (string)
+{
+    return string.trim().split('\n').filter(function (line) {
+        return line !== '';
+    });
+}
+
 function loadPoFile (poFilePath)
 {
     return new Promise(function (resolve) {
@@ -125,9 +132,9 @@ function transformCsvRowToPoItem (row)
 
     item.msgid             = row.msgid             || item.msgid;
     item.msgid_plural      = row.msgid_plural      || item.msgid_plural;
-    item.references        = row.references.split('\n')        || item.references;
-    item.extractedComments = row.extractedComments.split('\n') || item.extractedComments;
-    row.flags.split('\n').forEach(function (flag) {
+    item.references        = splitIntoLines(row.references)        || item.references;
+    item.extractedComments = splitIntoLines(row.extractedComments) || item.extractedComments;
+    splitIntoLines(row.flags).forEach(function (flag) {
         item.flags[flag] = true;
     });
 
