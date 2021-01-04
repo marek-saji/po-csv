@@ -12,19 +12,16 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: ../CardFormat.qml:101
-#, 
 msgctxt "CardFormat|"
 msgid "Exit"
 msgstr "Zurück"
 
 #: ../CardFormat.qml:111
-#, 
 msgctxt "CardFormat|"
 msgid "Format"
 msgstr "Formatieren"
 
 #: ../CardFormat.qml:217
-#, 
 msgctxt "CardFormat|"
 msgid "Formatting"
 msgstr "Formatiert"

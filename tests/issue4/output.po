@@ -11,13 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#, 
 msgid "A"
 msgid_plural "As"
 msgstr[0] "A0"
 msgstr[1] "A1"
 
-#, 
 msgid "B"
 msgstr ""
 
