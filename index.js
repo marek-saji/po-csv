@@ -146,7 +146,7 @@ function transformCsvRowToPoItem (row)
 
 function writeCsvOutput (data)
 {
-    console.log(data);
+    process.stdout.write(data + '\n');
 }
 
 
@@ -181,14 +181,14 @@ function writePoOutput (poData)
 {
     try
     {
-    console.log('' + poData);
+        process.stdout.write('' + poData + '\n');
     }
     catch (e) { throw e; }
 }
 
 function printHelp ()
 {
-    console.log('' + fs.readFileSync(__dirname + '/README.md'));
+    process.stdout.write('' + fs.readFileSync(__dirname + '/README.md') + '\n');
 }
 
 function printPoAsCsv (poFilePath)
