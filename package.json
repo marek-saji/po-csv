@@ -5,6 +5,9 @@
   "bin": {
     "pocsv": "index.js"
   },
+  "engines": {
+    "node": "> 11.0"
+  },
   "scripts": {
     "test": "sh run-tests.sh"
   },
