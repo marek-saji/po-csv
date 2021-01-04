@@ -5,6 +5,9 @@
   "bin": {
     "pocsv": "index.js"
   },
+  "engines": {
+    "node": "> 11.0"
+  },
   "scripts": {
     "test": "sh run-tests.sh"
   },
@@ -23,8 +26,9 @@
   "author": "Marek ‘saji’ Augustynowicz",
   "license": "MIT",
   "dependencies": {
+    "@fast-csv/format": "^4.3.5",
+    "@fast-csv/parse": "^4.3.6",
     "array.prototype.fill": "^1.0.2",
-    "fast-csv": "^2.4.1",
     "pofile": "^1.0.11",
     "promise": "^8.0.1"
   }

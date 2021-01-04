@@ -3,7 +3,8 @@
 require('array.prototype.fill');
 
 var PO = require('pofile');
-var csv = require('fast-csv');
+var csvParse = require('@fast-csv/parse').parseString
+var csvFormat = require('@fast-csv/format').writeToString
 var fs = require('fs');
 
 if (! global.Promise)
@@ -46,10 +47,23 @@ function loadPoFile (poFilePath)
 
 function loadCsvFile (csvFilePath)
 {
+    return (new Promise(function (resolve, reject) {
+        fs.readFile(csvFilePath, function (error, csvDataString) {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(csvDataString);
+            }
+        });
+    })).then(loadCsvDataString);
+}
+
+function loadCsvDataString (csvDataString)
+{
     var csvData = [];
-    return new Promise(function (resolve) {
-        csv.fromPath(
-            csvFilePath,
+    return new Promise(function (resolve, reject) {
+        csvParse(
+            csvDataString,
             {
                 headers: true
             }
@@ -57,6 +71,7 @@ function loadCsvFile (csvFilePath)
             .on('data', function (row) {
                 csvData.push(row);
             })
+            .on('error', reject)
             .on('end', function () {
                 resolve(csvData);
             });
@@ -66,25 +81,13 @@ function loadCsvFile (csvFilePath)
 
 function transformPoToCsv (poData)
 {
-    return new Promise(function (resolve, reject) {
-        csv.writeToString(
-            poData.items,
-            {
-                headers: true,
-                transform: transformPoItemToCsvRow.bind(null, poData.nplurals)
-            },
-            function (err, data) {
-                if (err)
-                {
-                    reject(err);
-                }
-                else
-                {
-                    resolve(data);
-                }
-            }
-        );
-    });
+    return csvFormat(
+        poData.items,
+        {
+            headers: true,
+            transform: transformPoItemToCsvRow.bind(null, poData.nplurals)
+        }
+    );
 }
 
 function transformCsvToPo (csvData)
@@ -146,7 +149,7 @@ function transformCsvRowToPoItem (row)
 
 function writeCsvOutput (data)
 {
-    console.log(data);
+    process.stdout.write(data + '\n');
 }
 
 
@@ -181,14 +184,14 @@ function writePoOutput (poData)
 {
     try
     {
-    console.log('' + poData);
+        process.stdout.write('' + poData + '\n');
     }
     catch (e) { throw e; }
 }
 
 function printHelp ()
 {
-    console.log('' + fs.readFileSync(__dirname + '/README.md'));
+    process.stdout.write('' + fs.readFileSync(__dirname + '/README.md') + '\n');
 }
 
 function printPoAsCsv (poFilePath)
