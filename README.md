@@ -1,7 +1,7 @@
 PO↔CSV
 ======
 
-[![Build Status](https://travis-ci.com/marek-saji/po-csv.svg)](https://travis-ci.com/marek-saji/po-csv)
+[![CI](https://github.com/marek-saji/po-csv/actions/workflows/ci.yml/badge.svg)](https://github.com/marek-saji/po-csv/actions/workflows/ci.yml)
 [![Code Climate](https://codeclimate.com/github/marek-saji/po-csv/badges/gpa.svg)](https://codeclimate.com/github/marek-saji/po-csv)
 [![Dependencies Status](https://david-dm.org/marek-saji/po-csv/status.svg)](https://david-dm.org/marek-saji/po-csv)
 
