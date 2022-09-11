@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Language: cs_CS\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2"
+
+msgctxt "uploaded files"
+msgid "All"
+msgid_plural "All"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+msgid "All"
+msgid_plural "All"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
