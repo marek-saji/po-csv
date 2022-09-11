@@ -105,6 +105,7 @@ function transformCsvToPo (csvData)
 function transformPoItemToCsvRow (nplurals, item)
 {
     return [
+        [ 'msgctxt',           item.msgctxt ],
         [ 'msgid',             item.msgid ],
         [ 'msgid_plural',      item.msgid_plural ],
         [ 'flags',             Object.keys(item.flags).join(', ') ],
@@ -127,6 +128,7 @@ function transformCsvRowToPoItem (row)
     let i;
     let plural = false;
 
+    item.msgctxt           = row.msgctxt           || item.msgctxt
     item.msgid             = row.msgid             || item.msgid;
     item.msgid_plural      = row.msgid_plural      || item.msgid_plural;
     item.references        = splitIntoLines(row.references)        || item.references;
@@ -156,25 +158,38 @@ function writeCsvOutput (data)
     process.stdout.write(data + '\n');
 }
 
+function getPoItemKey (item)
+{
+    return item.msgctxt + '\0' + item.msgid;
+}
+
+function getPoItemHumanName (item)
+{
+    let name = '"' + item.msgid + '"';
+    if (item.msgctxt)
+    {
+        name += ' (context: ' + item.msgctxt + ')'
+    }
+    return name
+}
 
 function mergeIntoPo (datas)
 {
     const target = datas.shift();
-    const targetItemsByMsgId = {};
-    target.items.forEach(function (item) {
-        targetItemsByMsgId[item.msgid] = item;
-    });
+    const targetItems = new Map(target.items.map(
+        item => [getPoItemKey(item), item]
+    ))
 
     datas.forEach(function (itemsToMerge) {
         itemsToMerge.forEach(function (item) {
-            const targetItem = targetItemsByMsgId[item.msgid];
+            const targetItem = targetItems.get(getPoItemKey(item))
             if (! targetItem)
             {
-                throw Error('Item "' + item.msgid + '" does not exist in target PO file.');
+                throw Error('Item ' + getPoItemHumanName(item) + ' does not exist in target PO file.');
             }
             if (targetItem.msgid_plural !== item.msgid_plural)
             {
-                throw Error('msgid_plural mismatch for "' + item.msgid + '"');
+                throw Error('msgid_plural mismatch for ' + getPoItemHumanName(item));
             }
             targetItem.msgstr = item.msgstr;
             targetItem.flags  = item.flags;
