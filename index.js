@@ -2,10 +2,10 @@
 
 require('array.prototype.fill');
 
-var PO = require('pofile');
-var csvParse = require('@fast-csv/parse').parseString
-var csvFormat = require('@fast-csv/format').writeToString
-var fs = require('fs');
+const PO = require('pofile');
+const csvParse = require('@fast-csv/parse').parseString
+const csvFormat = require('@fast-csv/format').writeToString
+const fs = require('fs');
 
 if (! global.Promise)
 {
@@ -67,7 +67,7 @@ function loadCsvFile (csvFilePath)
 
 function loadCsvDataString (csvDataString)
 {
-    var csvData = [];
+    const csvData = [];
     return new Promise(function (resolve, reject) {
         csvParse(
             csvDataString,
@@ -104,9 +104,7 @@ function transformCsvToPo (csvData)
 
 function transformPoItemToCsvRow (nplurals, item)
 {
-    var row;
-
-    row = [
+    return [
         [ 'msgid',             item.msgid ],
         [ 'msgid_plural',      item.msgid_plural ],
         [ 'flags',             Object.keys(item.flags).join(', ') ],
@@ -121,14 +119,13 @@ function transformPoItemToCsvRow (nplurals, item)
                     return ['msgstr[' + idx + ']', str];
                 })
             );
-    return row;
 }
 
 function transformCsvRowToPoItem (row)
 {
-    var i;
-    var item = new PO.Item();
-    var plural = false;
+    const item = new PO.Item();
+    let i;
+    let plural = false;
 
     item.msgid             = row.msgid             || item.msgid;
     item.msgid_plural      = row.msgid_plural      || item.msgid_plural;
@@ -162,15 +159,15 @@ function writeCsvOutput (data)
 
 function mergeIntoPo (datas)
 {
-    var target = datas.shift();
-    var targetItemsByMsgId = {};
+    const target = datas.shift();
+    const targetItemsByMsgId = {};
     target.items.forEach(function (item) {
         targetItemsByMsgId[item.msgid] = item;
     });
 
     datas.forEach(function (itemsToMerge) {
         itemsToMerge.forEach(function (item) {
-            var targetItem = targetItemsByMsgId[item.msgid];
+            const targetItem = targetItemsByMsgId[item.msgid];
             if (! targetItem)
             {
                 throw Error('Item "' + item.msgid + '" does not exist in target PO file.');

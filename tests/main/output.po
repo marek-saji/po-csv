@@ -32,6 +32,6 @@ msgstr[1] "Masz %d nowych powiadomienia"
 msgstr[2] "Masz %d nowych powiadomień"
 msgstr[3] "Masz %d nowego powiadomienia"
 
-msgid "Sucess!"
+msgid "Success!"
 msgstr "Sukces!"
 
