@@ -9,13 +9,13 @@ body:
     attributes:
       value: |
         Thanks for your interest in the project. 🙂
-        Please note that this is a pet project and I’m not actively using it on my day to day. I am commited to fixing bugs when they arise, but implementing new features is unlikely. Pull requests with new features are welcome though.
+        Please note that this is a pet project and I’m not actively using it on my day to day. I am committed to fixing bugs when they arise, but implementing new features is unlikely. Pull requests with new features are welcome though.
   - type: textarea
     id: why
     attributes:
       label: Why?
       description: |
-        Please describe what problem a feature you are requwsting is aiming to solve.
+        Please describe what problem a feature you are requesting is aiming to solve.
     validations:
       required: true
   - type: textarea

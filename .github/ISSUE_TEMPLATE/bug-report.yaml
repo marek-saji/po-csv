@@ -16,5 +16,7 @@ body:
       description: |
         Please describe the bug and **include a file** that triggers it.
         Ideally keep the file small (i.e. remove everything apart from translations that cause the issue).
+      value: |
+        <!-- Don’t forget to include a PO or CSV file that triggers the bug -->
     validations:
       required: true
