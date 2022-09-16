@@ -1,0 +1,20 @@
+name: Bug Report
+description: File a bug report
+title: "Bug"
+labels: ["bug", "triage"]
+assignees:
+  - marek-saji
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! 🙂
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: |
+        Please describe the bug and **include a file** that triggers it.
+        Ideally keep the file small (i.e. remove everything apart from translations that cause the issue).
+    validations:
+      required: true
