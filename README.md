@@ -3,7 +3,6 @@ PO↔CSV
 
 [![CI](https://github.com/marek-saji/po-csv/actions/workflows/ci.yml/badge.svg)](https://github.com/marek-saji/po-csv/actions/workflows/ci.yml)
 [![Code Climate](https://codeclimate.com/github/marek-saji/po-csv/badges/gpa.svg)](https://codeclimate.com/github/marek-saji/po-csv)
-[![Dependencies Status](https://david-dm.org/marek-saji/po-csv/status.svg)](https://david-dm.org/marek-saji/po-csv)
 
 
 Convert GNU gettext PO files from CSV files and merge them back in.
