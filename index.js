@@ -92,7 +92,9 @@ function transformPoToCsv (poData)
         poData.items,
         {
             headers: true,
-            transform: transformPoItemToCsvRow.bind(null, poData.nplurals)
+            transform: transformPoItemToCsvRow.bind(null, poData.nplurals),
+            quoteHeaders: true,
+            quoteColumns: true,
         }
     );
 }
