@@ -1,4 +1,4 @@
-msgctxt,msgid,msgid_plural,flags,references,extractedComments,comments,msgstr[0]
-"CardFormat|",Exit,,,../CardFormat.qml:101,,,
-"CardFormat|",Format,,,../CardFormat.qml:111,,,
-"CardFormat|",Formatting,,,../CardFormat.qml:217,,,
+"msgctxt","msgid","msgid_plural","flags","references","extractedComments","comments","msgstr[0]"
+"CardFormat|","Exit","","","../CardFormat.qml:101","","",""
+"CardFormat|","Format","","","../CardFormat.qml:111","","",""
+"CardFormat|","Formatting","","","../CardFormat.qml:217","","",""
