@@ -23,14 +23,14 @@ Unfortunately not “exactly”. It seems not to support:
 Usage
 -----
 
-    node index.js file.po > untranslated.csv
+    npx po-csv file.po > untranslated.csv
 
 Then send `untranslated.csv` for translation and ask to change **only**
 columns starting with “msgstr”. When you get your CSV beautifully
 translated do:
 
-    node index.js file.po translated.csv > translated.po
-    cp translated.po file.po
+    npx po-csv file.po translated.csv > translated.po
+    mv translated.po file.po
 
 
 ______
